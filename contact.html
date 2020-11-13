@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Asociacion Corazon Diverso</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Asociacion Corazon Diverso" />
+	<meta name="keywords" content="lbgt, organization, corazon diverso, asociacion corazon diverso, trans, transpeople" />
+	<meta name="author" content="Logan Wiley" />
+	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> -->
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="css/superfish.css">
+
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="js/respond.min.js"></script>
+
+	<script type="text/javascript">
+		function submitEmailForm(form) {
+			var obj = new XMLHttpRequest();
+			obj.onreadystatechange = function(){
+				if(obj.readyState == 4){
+					if(obj.status == 200){
+						var res = JSON.parse(obj.responseText);
+						alert(res.message);
+					}
+					else{
+						alert("XMLHttp status " + obj.status + ": " + obj.statusText);
+					}
+				}
+			};
+			obj.open("post", form.action, true);
+			obj.setRequestHeader("Content-Type", "application/json"); // NOTICE: "application/json"
+			obj.send(JSON.stringify({ name: form.name.value, email: form.email.value, message: form.message.value }));
+			return false;
+		}
+	</script>
+</head>
+<body>
+<div id="fh5co-wrapper">
+	<div id="fh5co-page">
+		<div class="header-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 text-left fh5co-link">
+						<a href="about.html">Acerca De</a>
+						<a href="video.html">Videos</a>
+						<a href="training.html">Formación</a>
+						<a href="donate.html">Done</a>
+						<a href="contact.html">Contacto</a>
+					</div>
+					<div class="col-md-6 col-sm-6 text-right fh5co-social">
+						<a href="https://www.facebook.com/fundacioncorazondiverso/" class="grow"><i class="icon-facebook2"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<header id="fh5co-header-section" class="sticky-banner">
+			<div class="container">
+				<div class="nav-header">
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+					<h1 id="fh5co-logo"><a href="index.html">Asociacion Corazon Diverso</a></h1>
+					<!-- START #fh5co-menu-wrap -->
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li>
+								<a href="index.html">Casa</a>
+							</li>
+							<li><a href="about.html">Acerca De</a></li>
+							<li><a href="video.html">Videos</a></li>
+							<li><a href="training.html">Formación</a></li>
+							<li><a href="blog.html">Blog</a></li>
+							<li><a href="donate.html">Done</a></li>
+							<li class="active"><a href="contact.html">Contacto</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<div class="fh5co-hero">
+			<div class="fh5co-overlay"></div>
+			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/IMG-20201025-WA0000.jpg);">
+				<div class="desc animate-box">
+					<h2><strong>Contáctenos</strong></h2>
+					<span><a class="btn btn-primary btn-lg" href="donate.html">Done Ahora</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<h2 class="text-center">
+				Enviar Correo Electrónico
+			</h2>
+			<form action="/sendmail" class="contact-form" method="POST" onsubmit="return submitEmailForm(this);">
+				<div class="form-group">
+					<input type="text" name="name" placeholder="Nombre" class="form-control" required />
+				</div>
+				<div class="form-group">
+					<input type="email" name="email" placeholder="Correo Electrónico" class="form-control" required />
+				</div>
+				<div class="form-group">
+					<textarea name="message" class="form-control" placeholder="Mensaje" required></textarea>
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-block btn-danger" value="Send Message"/>
+				</div>
+			</form>
+		</div>
+		<footer>
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 text-center">
+							<p class="fh5co-social-icons">
+								<a href="https://www.facebook.com/fundacioncorazondiverso/"><i class="icon-facebook2"></i></a>
+							</p>
+							<p>Copyright 2020 Wiley Development All Rights Reserved.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+

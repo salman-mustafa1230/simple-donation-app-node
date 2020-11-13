@@ -1,0 +1,28 @@
+{
+  "name": "form-mailer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "braintree-web": "^3.69.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "find-config": "^1.0.0",
+    "moodle-client": "^0.5.2",
+    "multer": "^1.4.2",
+    "nequi": "^1.2.2",
+    "nodemailer": "6.4.14",
+    "nodemailer-mailgun-transport": "^2.0.1",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "paypal-rest-sdk": "^1.8.1",
+    "react": "^17.0.1",
+    "request": "^2.88.2"
+  }
+}
